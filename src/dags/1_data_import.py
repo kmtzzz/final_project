@@ -97,7 +97,7 @@ def load_to_vertica(path: str,
                                 )
         with vertica_conn.cursor() as cur:
 
-            cur.execute(delete_expr) # idempotecy support
+            cur.execute(delete_expr) # idempotency support
             
             cur.executemany(insert_expr, list(zip(*map(processing_df.get, processing_df))))
 
