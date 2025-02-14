@@ -1,5 +1,4 @@
 import pendulum
-import contextlib
 import vertica_python
 import os
 import pandas as pd
@@ -19,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 # initialize airflow config object
 airflow_variables = AirflowHelper()
+
 file_root_path = '/data'
 
 logger.info(f"Starting process")
