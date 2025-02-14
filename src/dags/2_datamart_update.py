@@ -32,7 +32,6 @@ def load_global_metrics_dm(sql_statement_path: str,
     logger.info(f"{business_dt= } and {yesterday_dt= }")
 
     sql_statement = open(sql_statement_path).read().format(processed_dt=yesterday_dt)
-    logger.info(sql_statement)
 
     with vertica_conn.cursor() as cur:
         cur.execute(sql_statement)
