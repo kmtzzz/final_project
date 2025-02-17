@@ -2,7 +2,8 @@
 
 ### Description
 This repository is intended for source code of diploma project.  
-Technologies used in implementation:
+
+Technologies used in implementation: (italic)
 1. S3
 2. Postgres
 3. Vertica
