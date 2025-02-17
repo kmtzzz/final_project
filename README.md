@@ -1,20 +1,19 @@
-# Итоговый проект
+# Final project
 
-### Описание
-Репозиторий предназначен для сдачи итогового проекта.  
-Технологии для разработки:
+### Description
+This repository is intended for source code of diploma project.  
+Technologies used in implementation:
 1. S3
 2. Postgres
 3. Vertica
 4. Python
 5. Airflow
 6. Docker
+7. Metabase
 
-### Структура репозитория
-Файлы в репозитории будут использоваться для проверки и обратной связи по проекту. Поэтому постарайтесь публиковать ваше решение согласно установленной структуре: так будет проще соотнести задания с решениями.
-
-Внутри `src` расположены папки:
-- `/src/dags` - вложите в эту папку код DAG, который поставляет данные из источника в хранилище. Назовите DAG `1_data_import.py`. Также разместите здесь DAG, который обновляет витрины данных. Назовите DAG `2_datamart_update.py`.
-- `/src/sql` - сюда вложите SQL-запрос формирования таблиц в `STAGING`- и `DWH`-слоях, а также скрипт подготовки данных для итоговой витрины.
-- `/src/py` - если источником вы выберете Kafka, то в этой папке разместите код запуска генерации и чтения данных в топик.
-- `/src/img` - здесь разместите скриншот реализованного над витриной дашборда.
+### Repository structure
+Inside `src` next folders exist:
+- `/src/dags` - DAG, which extracts data from S3 and loads to Vertica STAGING data layer, DAG name is `1_data_import.py`. DAG updating data mart, DAG name is `2_datamart_update.py`.
+- `/src/sql` - DDLs for database model definition in `STAGING`- and `DWH`- layers, as well as script for datamart upload.
+- `/src/py` - in case of Kafka is source, place code for producing and consuming messages from it.
+- `/src/img` -  screenshot of Metabase dashboard built on top of datamart.
